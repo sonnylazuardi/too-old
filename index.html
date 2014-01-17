@@ -66,44 +66,48 @@
     </header>
   </div>
 
-  <div class="container hidden result-container">
-    <section class="result">
-      <h3>Ternyata, lo sudah menghabiskan waktu di dunia ini selama
-         <span data-bind="text: results.year"></span> tahun 
-         <span data-bind="text: results.month"></span> bulan
-         <span data-bind="text: results.week"></span> minggu
-         <span data-bind="text: results.day"></span> hari
-         <span data-bind="text: results.hour"></span> jam
-         <span data-bind="text: results.minute"></span> menit
-         <span data-bind="text: results.second"></span> detik looo.
-      </h3>
-      <p class="cari-tahu-lagi">
-        <a href="http://sonnylazuardi.github.io/too-old">cari tahu lagi</a>
-      </p>
-    </section>
+  <div data-bind="page: {id: 'calculate'}" class="change-bg">
+    <div class="container result-container">
+      <section class="result">
+        <h3>Ternyata, lo sudah menghabiskan waktu di dunia ini selama
+           <span data-bind="text: results.year"></span> tahun 
+           <span data-bind="text: results.month"></span> bulan
+           <span data-bind="text: results.week"></span> minggu
+           <span data-bind="text: results.day"></span> hari
+           <span data-bind="text: results.hour"></span> jam
+           <span data-bind="text: results.minute"></span> menit
+           <span data-bind="text: results.second"></span> detik looo.
+        </h3>
+        <p class="cari-tahu-lagi">
+          <a href="#start">cari tahu lagi</a>
+        </p>
+      </section>
+    </div>
   </div>
 
-  <div class="container calculator">
-    <header>
-      <h1>Sudah berapa lama gue hidup?</h1>
-    </header>
-    
-    <section>
-      <p>gue lahir pada:</p>
-      <p class="big">
-        <a href="#" data-toggle="modal" data-target="#changeDate">
-          <span data-bind="text: date"></span>
-        </a>/
-        <a href="#" data-toggle="modal" data-target="#chooseMonth">
-          <span data-bind="text: months()[month()].id"></span>
-        </a>/
-        <a href="#" data-toggle="modal" data-target="#changeYear">
-          <span data-bind="text: year"></span>
-        </a>
-      </p>
-      <span>* klik untuk mengganti tanggal, bulan dan tahun lahir</span>
-      <p class="cari-tahu"><a href="#" data-bind="click: showResult">cari tahu</a></p>
-    </section>
+  <div data-bind="page: {id: 'start'}">
+    <div class="container">
+      <header>
+        <h1>Sudah berapa lama gue hidup?</h1>
+      </header>
+      
+      <section>
+        <p>gue lahir pada:</p>
+        <p class="big">
+          <a href="#" data-toggle="modal" data-target="#changeDate">
+            <span data-bind="text: date"></span>
+          </a>/
+          <a href="#" data-toggle="modal" data-target="#chooseMonth">
+            <span data-bind="text: months()[month()].id"></span>
+          </a>/
+          <a href="#" data-toggle="modal" data-target="#changeYear">
+            <span data-bind="text: year"></span>
+          </a>
+        </p>
+        <span>* klik untuk mengganti tanggal, bulan dan tahun lahir</span>
+        <p class="cari-tahu"><a data-bind="click: showResult">cari tahu</a></p>
+      </section>
+    </div>
   </div>
 
   <div class="modal fade" id="changeDate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -196,14 +200,15 @@
         }
 
         self.showResult = function() {
-          $(".calculator").addClass("hidden");
-          $("html").addClass("change-bg");
-          $(".result-container").removeClass("hidden");
+          // $(".calculator").addClass("hidden");
+          // $("html").addClass("change-bg");
+          // $(".result-container").removeClass("hidden");
           var dateBorn = new Date();
-          dateBorn.setFullYear(year(), month(), date());
+          dateBorn.setFullYear(self.year(), self.month(), self.date());
           var today   = new Date();
           var seconds = (today - dateBorn)/1000;
           self.calc(seconds);
+          window.location.href = '#calculate';
         }
 
         self.calc = function(seconds) {
@@ -224,8 +229,10 @@
           self.results.second(seconds);
         };
       }
-
-      ko.applyBindings(TooOldVM);
+      var viewModel = new TooOldVM();
+      pager.extendWithPage(viewModel);
+      ko.applyBindings(viewModel);
+      pager.start({id: 'start'});
 
     </script>
   </body>

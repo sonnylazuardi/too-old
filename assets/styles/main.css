@@ -911,6 +911,7 @@ p.change-year {
 
 .change-bg {
   background: #ECFEF8;
+  padding-bottom: 50px;
 }
 
 .result > h3 {
