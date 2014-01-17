@@ -743,7 +743,7 @@ address {
 
 header {
   padding-top: 40px;
-  color: #09805b;
+  color: #2e4d64;
   text-align: center;
 }
 
@@ -767,7 +767,7 @@ section p.big {
   padding: 15px;
   margin-top: 40px;
   font-size: 3.3em;
-  color: #09805B;
+  color: #2e4d64;
   border: 1px solid;
   border-radius: 4px;
 }
@@ -780,7 +780,7 @@ section p.cari-tahu {
 section p.cari-tahu > a {
   padding: 15px 30px;
   font-size: 1em;
-  color: #0DC28A;
+  color: #3db4d8;
   background: #feffff;
   border-radius: 100px;
 }
@@ -798,7 +798,7 @@ section a:hover {
 }
 
 p.change-date {
-  padding-top: 220px;
+  padding-top: 260px;
   padding-left: 60px;
   font-size: 3.3em;
   text-align: left;
@@ -806,10 +806,20 @@ p.change-date {
 
 p.change-date input {
   width: 90px;
-  padding: 20px;
+  padding: 18px;
   margin-right: -13px;
   font-weight: 300;
-  color: #0DC28A;
+  color: #3db4d8;
+  background: #FFF;
+  border: none;
+}
+
+p.change-date select {
+  width: 125px;
+  padding: 19px;
+  margin-right: -13px;
+  font-weight: 300;
+  color: #3db4d8;
   background: #FFF;
   border: 0;
 }
@@ -821,7 +831,7 @@ p.change-date input:focus {
 .change-date a {
   padding: 20px 40px;
   color: #FFF;
-  background: #0DC28A;
+  background: #3db4d8;
   opacity: 1;
 }
 
@@ -834,7 +844,7 @@ p.change-date input:focus {
   padding-right: 15px;
   padding-left: 15px;
   font-size: 2em;
-  color: #0DC28A;
+  color: #3db4d8;
   text-align: center;
   background: #FFF;
   border-top: 1px solid #D9FCF2;
@@ -866,7 +876,7 @@ a.month:hover {
 }
 
 p.change-year {
-  padding-top: 220px;
+  padding-top: 260px;
   margin-right: -46px;
   font-size: 3.3em;
   text-align: right;
@@ -877,7 +887,7 @@ p.change-year {
   padding: 20px;
   margin-right: -13px;
   font-weight: 300;
-  color: #0DC28A;
+  color: #3db4d8;
   background: #FFF;
   border: 0;
 }
@@ -889,7 +899,7 @@ p.change-year {
 .change-year a {
   padding: 20px 40px;
   color: #FFF;
-  background: #0DC28A;
+  background: #3db4d8;
   opacity: 1;
 }
 
@@ -906,7 +916,7 @@ p.change-year {
 .result > h3 {
   font-size: 3.3em;
   font-weight: 300;
-  color: #09805B;
+  color: #2e4d64;
 }
 
 .cari-tahu-lagi {
@@ -915,8 +925,8 @@ p.change-year {
 
 .cari-tahu-lagi a {
   padding: 10px 20px 10px 20px;
-  color: #09805B;
-  border: 1px solid #09805B;
+  color: #2e4d64;
+  border: 1px solid #2e4d64;
   border-radius: 100px;
 }
 
@@ -932,12 +942,17 @@ p.change-year {
   padding-right: 4px;
 }
 
+.logo2 {
+  height: 20px;
+  padding-right: 4px;
+}
+
 .copyright p a {
-  color: #0DB782;
+  color: #3db4d8;
 }
 
 html {
-  background: #0dc28a;
+  background: #3db4d8;
 }
 
 body {
